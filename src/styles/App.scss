@@ -1,0 +1,40 @@
+@use "variants.scss";
+@use "../components/header/styles/header.scss";
+@use "../components/headerPromo/styles/headerPromo.scss";
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1450px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.button {
+  border-radius: 100px;
+  line-height: 20px;
+  font-size: clamp(0.75rem, 0.679rem + 0.35vw, 1rem);
+  padding: 1.531em 3.125em;
+  background: variants.$mainColor;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+
+  @include variants.GradientHover;
+}
+
+@media (width <= 31.25em) {
+  .button {
+    max-width: none;
+    width: 100%;
+  }
+}
