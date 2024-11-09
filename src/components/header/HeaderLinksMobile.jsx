@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import HeaderBurger from "./HeaderBurger";
 
-export default function HeaderLinkMobile({ headerLinks }) {
+export default function HeaderLinkMobile({ burgerLinks }) {
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   return (
     <>
-      <div className="header__link header__burger-btn">
+      <div
+        onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+        className="header__link header__burger-btn"
+      >
         <span></span>
       </div>
-      <div className="burger-menu">
-        {/* Вывод матрицы в меню бургере */}
-        {headerLinks.map(([linkName, link], index) => (
-          <a key={index} href={link} className="burger-menu__link">
-            {linkName}
-          </a>
-        ))}
-      </div>
+      <HeaderBurger burgerLinks={burgerLinks} isBurgerOpen={isBurgerOpen} />
     </>
   );
 }

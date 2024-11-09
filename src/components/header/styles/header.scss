@@ -2,7 +2,8 @@
 
 .header {
   width: 100%;
-  position: absolute;
+  position: sticky;
+  margin-bottom: -83px;
   z-index: 10;
   top: 0;
   &__items {
@@ -18,7 +19,7 @@
     font-family: "CSPcircle";
     font-size: 3rem;
 
-    @include variants.txtGradientHover;
+    @include variants.txtGradientHover("csp");
   }
 
   &__nav {
@@ -34,6 +35,7 @@
     height: 14px;
     position: relative;
     cursor: pointer;
+
     &::after,
     &::before,
     span {
@@ -71,8 +73,56 @@
 }
 
 .burger-menu {
-  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  gap: 30px;
+
+  padding: 30px;
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  top: 0;
+
+  height: 100dvh;
+  width: 329px;
+
+  background: #fff;
+  box-shadow: -7px 0px 9px rgba(0, 0, 0, 20%);
+
+  &__links {
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: 30px;
+  }
   &__link {
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+
+  &__contacts {
+    display: grid;
+    gap: 15px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 150%;
+      height: 1px;
+      background: rgba(72, 72, 72, 20%);
+      margin: 0 -30px 15px -30px;
+    }
+  }
+
+  &__contact {
+    color: rgba(72, 72, 72, 60%);
+    font-weight: 500;
   }
 }
 

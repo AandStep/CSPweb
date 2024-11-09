@@ -1,0 +1,34 @@
+.page-title {
+  display: grid;
+  justify-content: flex-end;
+  &__txt {
+    font-size: clamp(0.875rem, 0.698rem + 0.88vw, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+    position: relative;
+    display: grid;
+
+    &_dark {
+      color: #414141;
+    }
+    &_light {
+      color: #fff;
+    }
+  }
+
+  &__line {
+    width: 290px;
+    height: 4px;
+    background: #414141;
+    margin: 20px 0 0 0;
+    opacity: 95%;
+
+    &_dark {
+      background: #414141;
+    }
+    &_light {
+      background: #fff;
+    }
+  }
+}

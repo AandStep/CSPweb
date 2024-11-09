@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import HeaderBurger from "./HeaderBurger";
 
-export default function HeaderLinksDesktop({ headerLinks }) {
+export default function HeaderLinksDesktop({ headerLinks, burgerLinks }) {
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsBurgerOpen((prev) => !prev);
+  };
   return (
     <>
       {/* Вывод матрицы */}
@@ -9,17 +15,19 @@ export default function HeaderLinksDesktop({ headerLinks }) {
           {linkName}
         </a>
       ))}
-      <div className="header__link header__burger-btn">
+      <div
+        onClick={toggleMenu}
+        className={`header__link header__burger-btn ${
+          isBurgerOpen ? "active" : ""
+        }`}
+      >
         <span></span>
       </div>
-      <div className="burger-menu">
-        {/* Вывод матрицы в меню бургере */}
-        {headerLinks.map(([linkName, link], index) => (
-          <a key={index} href={link} className="burger-menu__link">
-            {linkName}
-          </a>
-        ))}
-      </div>
+      <HeaderBurger
+        burgerLinks={burgerLinks}
+        isBurgerOpen={isBurgerOpen}
+        toggleMenu={toggleMenu}
+      />
     </>
   );
 }

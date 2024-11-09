@@ -10,6 +10,15 @@ export default function HeaderLinks() {
     ["Наши проекты", "#"],
   ];
 
+  const burgerLinks = [
+    ["Наши услуги", "#"],
+    ["О нас", "#"],
+    ["Разработка", "#"],
+    ["Разработчики", "#"],
+    ["Наши проекты", "#"],
+    ["Контакты", "#"],
+  ];
+
   // Переменная для смены отображения на мобильное
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -28,9 +37,12 @@ export default function HeaderLinks() {
     <>
       {/* Проверка на мобильную версию */}
       {isMobile ? (
-        <HeaderLinksMobile headerLinks={headerLinks} />
+        <HeaderLinksMobile burgerLinks={burgerLinks} />
       ) : (
-        <HeaderLinksDesktop headerLinks={headerLinks} />
+        <HeaderLinksDesktop
+          headerLinks={headerLinks}
+          burgerLinks={burgerLinks}
+        />
       )}
     </>
   );
