@@ -160,8 +160,10 @@ export default function LeaveRequest() {
               <label className="form__label">
                 <input type="checkbox" {...register("agreement")} />
                 <span className="custom-checkbox"></span>
-                Отправляя свои данные вы соглашаетесь с политикой
-                конфиденциальности
+                <p>
+                  Отправляя свои данные вы соглашаетесь с политикой
+                  конфиденциальности
+                </p>
               </label>
               {errors.agreement && <p>{errors.agreement.message}</p>}
             </div>

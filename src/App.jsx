@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import HeaderPromo from "./components/headerPromo/HeaderPromo";
 import OurServices from "./components/ourServices/OurServices";
 import LeaveRequest from "./components/leaveRequest/LeaveRequest";
+import AboutUs from "./components/aboutUs/AboutUs";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <HeaderPromo />
         <OurServices />
         <LeaveRequest />
+        <AboutUs />
       </main>
       <footer className="footer"></footer>
     </div>
