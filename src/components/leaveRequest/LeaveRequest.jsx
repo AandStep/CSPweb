@@ -33,36 +33,6 @@ export default function LeaveRequest() {
 
   const [file, setFile] = useState(null);
 
-  const onSubmit = async (data) => {
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("email", data.email);
-    formData.append("phone", data.phone);
-    formData.append("taskDescription", data.taskDescription);
-    formData.append("agreement", data.agreement);
-
-    if (file) {
-      formData.append("file", file);
-    }
-
-    // Отправка данных на сервер
-    try {
-      const response = await fetch("https://your-api-endpoint.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        console.log("Заявка отправлена успешно");
-      } else {
-        console.error("Ошибка при отправке заявки");
-      }
-    } catch (error) {
-      console.log(formData);
-      console.error("Ошибка сети:", error);
-    }
-  };
-
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     if (
@@ -96,7 +66,7 @@ export default function LeaveRequest() {
               оставьте заявку и наши специалисты помогут вам найти решение
             </h3>
           </div>
-          <form className="form" onSubmit={handleSubmit(onSubmit)}>
+          <form className="form">
             <div>
               <input
                 className="form__input"
