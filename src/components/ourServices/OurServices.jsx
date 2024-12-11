@@ -20,7 +20,7 @@ export default function OurServices() {
     ],
   ];
   return (
-    <section className="our-services">
+    <section className="our-services section-white">
       <div className="container">
         <PageTitle titleTxt="наши услуги" titleTheme="dark" />
       </div>

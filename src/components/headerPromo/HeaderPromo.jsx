@@ -4,7 +4,7 @@ import IphoneImg from "../../assets/headerPromoIphone.png";
 
 export default function HeaderPromo() {
   return (
-    <section className="header-promo">
+    <section className="header-promo section-white">
       <div className="container">
         <div className="header-promo__offer">
           <h1 className="header-promo__title">Создание сайтов и веб-дизайн</h1>
