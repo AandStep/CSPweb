@@ -17,7 +17,7 @@
 
 section {
   padding: clamp(2.5rem, 0.836rem + 8.32vw, 8.375rem) 0 40px 0;
-  min-height: 100dvh;
+  min-height: 100svh;
 
   &.header-promo {
     padding: 0;
@@ -94,5 +94,11 @@ section {
   .button {
     max-width: none;
     width: 100%;
+  }
+}
+
+@media (width <=768px) {
+  .main {
+    margin: -83px 0 0 0;
   }
 }

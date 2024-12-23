@@ -1,8 +1,7 @@
 @use "../../../styles/variants.scss";
 
 .header-promo {
-  height: 100dvh;
-  transition: all 0.3s ease;
+  height: 100svh;
   position: relative;
 
   &::after {
@@ -17,11 +16,10 @@
   }
 
   &__offer {
-    height: 100dvh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: all 0.3s ease;
     gap: 10px;
   }
 
@@ -70,7 +68,7 @@
   .header-promo {
     &__offer {
       justify-content: flex-start;
-      padding: 33.333dvh 0 0 0;
+      padding: 33.333svh 0 0 0;
     }
   }
 }
