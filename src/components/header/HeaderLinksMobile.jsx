@@ -3,6 +3,10 @@ import HeaderBurger from "./HeaderBurger";
 
 export default function HeaderLinkMobile({ burgerLinks }) {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsBurgerOpen((prev) => !prev);
+  };
   return (
     <>
       <div
@@ -11,7 +15,11 @@ export default function HeaderLinkMobile({ burgerLinks }) {
       >
         <span></span>
       </div>
-      <HeaderBurger burgerLinks={burgerLinks} isBurgerOpen={isBurgerOpen} />
+      <HeaderBurger
+        burgerLinks={burgerLinks}
+        isBurgerOpen={isBurgerOpen}
+        toggleMenu={toggleMenu}
+      />
     </>
   );
 }
