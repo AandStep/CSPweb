@@ -42,7 +42,7 @@ export default function OurProjects() {
   };
 
   return (
-    <section className="our-projects">
+    <section id="our-projects" className="our-projects">
       <div className="container">
         <PageTitle titleTxt="наши проекты" titleTheme="dark" />
       </div>

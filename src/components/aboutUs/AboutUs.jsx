@@ -38,7 +38,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="about-us">
+    <section id="about-us" className="about-us">
       <div className="container">
         <PageTitle titleTxt="о нас" titleTheme="dark" />
       </div>

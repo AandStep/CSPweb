@@ -4,7 +4,7 @@ import Form from "../../Form";
 
 export default function LeaveRequest() {
   return (
-    <section className="leave-request section-dark">
+    <section id="leave-request" className="leave-request section-dark">
       <div className="container">
         <PageTitle titleTxt="наши услуги" titleTheme="light" />
       </div>

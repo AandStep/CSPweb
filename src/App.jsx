@@ -7,6 +7,7 @@ import LeaveRequest from "./components/leaveRequest/LeaveRequest";
 import AboutUs from "./components/aboutUs/AboutUs";
 import DeveloperInfo from "./components/developersInfo/developerInfo";
 import OurProjects from "./components/ourProjects/ourProjects";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <DeveloperInfo />
         <OurProjects />
       </main>
-      <footer className="footer"></footer>
+      <Footer />
     </div>
   );
 }

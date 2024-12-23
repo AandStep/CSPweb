@@ -25,6 +25,8 @@ export default function Header() {
           currentBackground = "rgba(65, 65, 65, 0.9)"; // Цвет #414141 с прозрачностью 70%
         } else if (section.classList.contains("section-white")) {
           currentBackground = "rgba(255, 255, 255, 0.9)"; // Белый с прозрачностью 70%
+        } else if (section.classList.contains("section-footer")) {
+          currentBackground = "rgba(26, 26, 26, 0.9)"; // Белый с прозрачностью 70%
         }
       }
     });
