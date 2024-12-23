@@ -65,10 +65,11 @@
   }
 }
 
-@media (width <= 959px) {
+@media (width < 960px) {
   .our-projects {
     &__item {
-      width: clamp(18.125rem, 6.563rem + 57.81vw, 41.25rem);
+      max-width: 659px;
+      width: 100%;
     }
     &__masonry-grid {
       justify-content: center;

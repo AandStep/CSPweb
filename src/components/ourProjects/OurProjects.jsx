@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import debounce from "lodash/debounce";
+
 import PageTitle from "../PageTitle/PageTitle";
 import ProjectItem from "./ProjectItem";
 import Masonry from "react-masonry-css";
@@ -36,10 +38,26 @@ export default function OurProjects() {
     // Добавьте другие проекты по мере необходимости
   ];
 
-  const breakpoints = {
+  const [breakpointCols, setBreakpointCols] = useState({
     default: 2,
     960: 1,
-  };
+  });
+
+  const handleResize = debounce(() => {
+    const width = window.innerWidth;
+    if (width < 960) {
+      setBreakpointCols({ default: 1 });
+    } else {
+      setBreakpointCols({ default: 2 });
+    }
+  }); // Установите задержку по необходимости
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <section id="our-projects" className="our-projects">
@@ -49,7 +67,7 @@ export default function OurProjects() {
       <div className="container">
         <div className="our-projects__wrapper">
           <Masonry
-            breakpointCols={breakpoints}
+            breakpointCols={breakpointCols}
             className="our-projects__masonry-grid"
             columnClassName="our-projects__masonry-grid_column"
           >
