@@ -12,9 +12,13 @@ $mainColorHover: linear-gradient(126deg, #f77dee, #ce6bcb, #bf6ed3, #8f67cc);
   position: relative;
   &::before {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     content: $txtValue;
     margin-left: auto;
     margin-right: auto;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;

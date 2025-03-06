@@ -31,6 +31,8 @@
   }
 
   &__button {
+    display: block;
+    text-align: center;
     p {
       @include variants.txtGradientHover("заказать");
     }

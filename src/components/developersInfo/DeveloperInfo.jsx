@@ -48,7 +48,7 @@ export default function DeveloperInfo() {
   ];
 
   return (
-    <section className="developers-info">
+    <section id="developers-info" className="developers-info">
       <div className="container">
         <PageTitle titleTxt="разработчики" titleTheme="dark" />
       </div>

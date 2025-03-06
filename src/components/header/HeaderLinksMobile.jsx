@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderBurger from "./HeaderBurger";
 
 export default function HeaderLinkMobile({ burgerLinks }) {
@@ -7,6 +7,24 @@ export default function HeaderLinkMobile({ burgerLinks }) {
   const toggleMenu = () => {
     setIsBurgerOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isBurgerOpen) {
+        setIsBurgerOpen(false);
+      }
+    };
+
+    document.body.style.overflow = isBurgerOpen ? "hidden" : "auto";
+
+    if (isBurgerOpen) {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isBurgerOpen]);
   return (
     <>
       <div

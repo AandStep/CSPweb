@@ -1,5 +1,7 @@
 import React from "react";
+import "./styles/index.scss";
 import "./styles/App.scss";
+
 import Header from "./components/header/Header";
 import HeaderPromo from "./components/headerPromo/HeaderPromo";
 import OurServices from "./components/ourServices/OurServices";
@@ -8,6 +10,7 @@ import AboutUs from "./components/aboutUs/AboutUs";
 import DeveloperInfo from "./components/developersInfo/developerInfo";
 import OurProjects from "./components/ourProjects/ourProjects";
 import Footer from "./components/footer/Footer";
+import DevelopmentProcess from "./components/developmentProcess/DevelopmentProcess";
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
         <OurServices />
         <LeaveRequest />
         <AboutUs />
+        <DevelopmentProcess />
         <DeveloperInfo />
         <OurProjects />
       </main>

@@ -41,8 +41,6 @@ const ProjectItem = ({ title, subtitle, imgSrc, backgroundImg }) => {
           y: isMobile ? (isHovered ? 0 : -20) : 0,
         }}
         transition={{ duration: 0.3 }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {subtitle}
       </motion.h2>

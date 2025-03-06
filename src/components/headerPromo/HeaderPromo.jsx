@@ -9,9 +9,9 @@ export default function HeaderPromo() {
         <div className="header-promo__offer">
           <h1 className="header-promo__title">Создание сайтов и веб-дизайн</h1>
           <h3 className="header-promo__sub-title">любой сложности под ключ</h3>
-          <button className="button header-promo__button">
+          <a href="#leave-request" className="button header-promo__button">
             <p>Оставить заявку</p>
-          </button>
+          </a>
         </div>
       </div>
       <img

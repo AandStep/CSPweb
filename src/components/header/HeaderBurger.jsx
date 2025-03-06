@@ -16,9 +16,6 @@ export default function HeaderBurger({
           transition={{ duration: 0.3 }}
           className="burger-menu"
         >
-          <div onClick={toggleMenu} className="burger-menu__close">
-            закрыть
-          </div>
           {/* Вывод матрицы в меню бургере */}
           <div className="burger-menu__links">
             {burgerLinks.map(([linkName, link], index) => (
@@ -31,9 +28,9 @@ export default function HeaderBurger({
               </a>
             ))}
           </div>
-          <button className="burger-menu__button button">
+          <a href="#leave-request" className="burger-menu__button button">
             оставить заявку
-          </button>
+          </a>
           <div className="burger-menu__contacts">
             <a href="tel: +79955721248" className="burger-menu__contact">
               +7 (995) 572 12-48

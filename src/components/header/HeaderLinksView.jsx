@@ -5,18 +5,18 @@ import HeaderLinksDesktop from "./HeaderLinksDesktop";
 export default function HeaderLinks() {
   // Матрица ссылок
   const headerLinks = [
-    ["О нас", "#"],
-    ["Разработка", "#"],
-    ["Наши проекты", "#"],
+    ["О нас", "#about-us"],
+    ["Разработка", "#development-process"],
+    ["Наши услуги", "#our-services"],
   ];
 
   const burgerLinks = [
-    ["Наши услуги", "#"],
-    ["О нас", "#"],
-    ["Разработка", "#"],
-    ["Разработчики", "#"],
-    ["Наши проекты", "#"],
-    ["Контакты", "#"],
+    ["Наши услуги", "#our-services"],
+    ["О нас", "#about-us"],
+    ["Разработка", "#development-process"],
+    ["Разработчики", "#developers-info"],
+    ["Наши проекты", "#our-projects"],
+    ["Контакты", "#leave-request"],
   ];
 
   // Переменная для смены отображения на мобильное

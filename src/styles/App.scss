@@ -1,4 +1,5 @@
 @use "variants.scss";
+@use "Form.scss";
 @use "../components/header/styles/header.scss";
 @use "../components/headerPromo/styles/headerPromo.scss";
 @use "../components/ourServices/styles/ourServices.scss";
@@ -8,6 +9,7 @@
 @use "../components/developersInfo/styles/developerInfo.scss";
 @use "../components/ourProjects/styles/ourProjects.scss";
 @use "../components/footer/styles/footer.scss";
+@use "../components/developmentProcess/styles/developmentProcess.scss";
 
 .wrapper {
   min-height: 100dvh;
@@ -57,19 +59,29 @@ section {
     border-radius: 100px;
     line-height: 20px;
     font-size: clamp(0.75rem, 0.679rem + 0.35vw, 1rem);
-    padding: 1.531em 3.125em;
     background: transparent;
     text-transform: uppercase;
     text-align: center;
-    color: #fff;
+    color: rgba(65, 65, 65, 20%);
     font-weight: 600;
-    border: 2px solid #fff;
+    border: 2px solid rgba(65, 65, 65, 20%);
     transition: all 0.5s ease;
 
     &:hover {
-      background: #fff;
-      color: #414141;
+      border: 2px solid rgba(200, 117, 217, 100%);
     }
+
+    p {
+      height: 100%;
+      padding: 1.531em 3.125em;
+      font-weight: 700;
+      @include variants.txtGradientHover("тех. задание");
+    }
+  }
+
+  .button-second-form {
+    color: rgba(255, 255, 255, 60%);
+    border: 2px solid rgba(255, 255, 255, 60%);
   }
 
   .button-alt {

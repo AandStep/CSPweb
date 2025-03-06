@@ -6,7 +6,7 @@ export default function LeaveRequest() {
   return (
     <section id="leave-request" className="leave-request section-dark">
       <div className="container">
-        <PageTitle titleTxt="наши услуги" titleTheme="light" />
+        <PageTitle titleTxt="оставить заявку" titleTheme="light" />
       </div>
       <div className="container">
         <div className="leave-request__wrapper">
@@ -18,7 +18,7 @@ export default function LeaveRequest() {
               оставьте заявку и наши специалисты помогут вам найти решение
             </h3>
           </div>
-          <Form />
+          <Form Theme="light" />
         </div>
       </div>
     </section>

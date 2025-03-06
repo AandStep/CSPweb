@@ -21,7 +21,7 @@ const schema = yup.object().shape({
     .oneOf([true], "Необходимо согласие на обработку персональных данных"),
 });
 
-export default function Form() {
+export default function Form({ Theme }) {
   const {
     register,
     handleSubmit,
@@ -50,10 +50,12 @@ export default function Form() {
     }
   };
   return (
-    <form className="form">
+    <form className={Theme === "dark" ? "form form-dark" : "form"}>
       <div>
         <input
-          className="form__input"
+          className={
+            Theme === "dark" ? "form__input form-dark__input" : "form__input"
+          }
           type="text"
           placeholder="Ваше имя *"
           {...register("name")}
@@ -63,7 +65,9 @@ export default function Form() {
 
       <div>
         <input
-          className="form__input"
+          className={
+            Theme === "dark" ? "form__input form-dark__input" : "form__input"
+          }
           type="email"
           placeholder="Почта *"
           {...register("email")}
@@ -73,7 +77,9 @@ export default function Form() {
 
       <div>
         <input
-          className="form__input"
+          className={
+            Theme === "dark" ? "form__input form-dark__input" : "form__input"
+          }
           type="tel"
           placeholder="Номер телефона"
           {...register("phone")}
@@ -83,7 +89,11 @@ export default function Form() {
 
       <div>
         <textarea
-          className="form__textarea"
+          className={
+            Theme === "dark"
+              ? "form__textarea form-dark__textarea"
+              : "form__textarea"
+          }
           placeholder="Опишите вашу задачу"
           {...register("taskDescription")}
         ></textarea>
@@ -91,11 +101,15 @@ export default function Form() {
       <div className="form__btns">
         <div>
           <button
-            className="button-second"
+            className={
+              Theme === "dark"
+                ? "button-second"
+                : "button-second button-second-form"
+            }
             type="button"
             onClick={() => document.getElementById("fileInput").click()}
           >
-            Тех. задание
+            <p>Тех. задание</p>
           </button>
           <input
             type="file"
@@ -106,12 +120,21 @@ export default function Form() {
           />
         </div>
 
-        <button className="form__button button-alt" type="submit">
+        <button
+          className={
+            Theme === "dark" ? "form__button button" : "form__button button-alt"
+          }
+          type="submit"
+        >
           <p>Оставить заявку</p>
         </button>
       </div>
       <div>
-        <label className="form__label">
+        <label
+          className={
+            Theme === "dark" ? "form__label form-dark__label" : "form__label"
+          }
+        >
           <input type="checkbox" {...register("agreement")} />
           <span className="custom-checkbox"></span>
           <p>

@@ -20,7 +20,7 @@ export default function OurServices() {
     ],
   ];
   return (
-    <section className="our-services section-white">
+    <section id="our-services" className="our-services section-white">
       <div className="container">
         <PageTitle titleTxt="наши услуги" titleTheme="dark" />
       </div>
@@ -30,7 +30,7 @@ export default function OurServices() {
             ([serviceName, serviceDescription, servicePrice], index) => (
               <div
                 style={{
-                  backgroundImage: `url(/images/impGR-${index + 1}.svg)`,
+                  backgroundImage: `url(/images/impGR-${index + 1}.webp)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -46,9 +46,13 @@ export default function OurServices() {
                 <p className="our-services__price">
                   цена от: <span>{servicePrice}</span>
                 </p>
-                <button className="our-services__button button-alt">
+
+                <a
+                  href="#leave-request"
+                  className="our-services__button button-alt"
+                >
                   <p>заказать</p>
-                </button>
+                </a>
               </div>
             )
           )}
