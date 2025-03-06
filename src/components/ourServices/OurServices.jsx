@@ -30,7 +30,9 @@ export default function OurServices() {
             ([serviceName, serviceDescription, servicePrice], index) => (
               <div
                 style={{
-                  backgroundImage: `url(/images/impGR-${index + 1}.webp)`,
+                  backgroundImage: `url(${
+                    import.meta.env.BASE_URL
+                  }images/impGR-${index + 1}.webp)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",

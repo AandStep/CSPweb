@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
+import imgDevDesc from "/images/Development.webp";
+import imgDevMobile from "/images/Development-m.svg";
 
 export default function DevelopmentProcess() {
   const wrapperRef = useRef(null);
@@ -40,9 +42,9 @@ export default function DevelopmentProcess() {
 
   const updateImage = () => {
     if (window.innerWidth <= 768) {
-      setImageSrc("/images/Development-m.svg");
+      setImageSrc(imgDevMobile);
     } else {
-      setImageSrc("/images/Development.webp");
+      setImageSrc(imgDevDesc);
     }
   };
 

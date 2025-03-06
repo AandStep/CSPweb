@@ -5,37 +5,41 @@ import PageTitle from "../PageTitle/PageTitle";
 import ProjectItem from "./ProjectItem";
 import Masonry from "react-masonry-css";
 
+import stekloideaDesc from "/images/stekloidea-desc.svg";
+import stekloideaBkg from "/images/stekloidea-bkg.png";
+import kozhuraDesc from "/images/kozhura-desc.svg";
+import kozhuraBkg from "/images/kozhura-bkg.png";
+
 export default function OurProjects() {
   const projects = [
     {
       title: "Брэндинг компании STEKLO&IDEA",
       subtitle:
         "Сайт по продаже зеркал, слоганы, логотипы, фирменные цвета и стиль, презентации, баннеры, оформление соц-сетей",
-      imgSrc: "/images/stekloidea-desc.svg",
-      backgroundImg: "/images/stekloidea-bkg.png",
+      imgSrc: stekloideaDesc,
+      backgroundImg: stekloideaBkg,
     },
     {
       title: "Сайт-портал для компании KOZHURA",
       subtitle:
         "Многостраничный сайт, переработка устаревшего дизайна, UI-кит компании, отрисовка логотипов",
-      imgSrc: "/images/kozhura-desc.svg",
-      backgroundImg: "/images/kozhura-bkg.png",
+      imgSrc: kozhuraDesc,
+      backgroundImg: kozhuraBkg,
     },
     {
       title: "Брэндинг компании STEKLO&IDEA",
       subtitle:
         "Сайт по продаже зеркал, слоганы, логотипы, фирменные цвета и стиль, презентации, баннеры, оформление соц-сетей",
-      imgSrc: "/images/stekloidea-desc.svg",
-      backgroundImg: "/images/stekloidea-bkg.png",
+      imgSrc: stekloideaDesc,
+      backgroundImg: stekloideaBkg,
     },
     {
       title: "Сайт-портал для компании KOZHURA",
       subtitle:
         "Многостраничный сайт, переработка устаревшего дизайна, UI-кит компании, отрисовка логотипов",
-      imgSrc: "/images/kozhura-desc.svg",
-      backgroundImg: "/images/kozhura-bkg.png",
+      imgSrc: kozhuraDesc,
+      backgroundImg: kozhuraBkg,
     },
-    // Добавьте другие проекты по мере необходимости
   ];
 
   const [breakpointCols, setBreakpointCols] = useState({

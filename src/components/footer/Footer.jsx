@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
 import FooterLinkItem from "./FooterLinkItem";
 
+import footerLogo from "/images/csp-logo-footer.svg";
+
 export default function Footer() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
@@ -26,7 +28,7 @@ export default function Footer() {
       items: [
         { type: "link", content: "Главная", href: "#" },
         { type: "link", content: "О нас", href: "#about-us" },
-        { type: "link", content: "Разработка", href: "" },
+        { type: "link", content: "Разработка", href: "#development-process" },
         { type: "link", content: "Наши проекты", href: "#our-projects" },
         { type: "link", content: "Оставить заявку", href: "#leave-request" },
       ],
@@ -88,11 +90,7 @@ export default function Footer() {
                     />
                   ))}
                 </div>
-                <img
-                  src="/images/csp-logo-footer.svg"
-                  alt=""
-                  className="footer__logo"
-                />
+                <img src={footerLogo} alt="" className="footer__logo" />
               </>
             )}
           </>

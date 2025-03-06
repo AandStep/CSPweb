@@ -1,24 +1,37 @@
 import React from "react";
 import PageTitle from "../PageTitle/PageTitle";
 
+import htmlIcon from "/images/html-icon.png";
+import reactIcon from "/images/react-icon.png";
+import jsIcon from "/images/js-icon.png";
+import jqueryIcon from "/images/jquery-icon.png";
+import cssIcon from "/images/css-icon.png";
+import scssIcon from "/images/scss-icon.png";
+
+import bitrixIcon from "/images/1c-bitrix-icon.png";
+import ajaxIcon from "/images/ajax-icon.png";
+import phpIcon from "/images/php-icon.png";
+import djangoIcon from "/images/django-icon.png";
+import mysqlIcon from "/images/mysql-icon.png";
+import restApiIcon from "/images/rest-api-icon.png";
+
 export default function DeveloperInfo() {
   const frontEndStackItems = [
-    { name: "HTML", imgSrc: "/images/html-icon.png" },
-    { name: "ReactJS", imgSrc: "/images/react-icon.png" },
-    { name: "JavaScript", imgSrc: "/images/js-icon.png" },
-    { name: "jQuery", imgSrc: "/images/jquery-icon.png" },
-    { name: "CSS", imgSrc: "/images/css-icon.png" },
-    { name: "SCSS", imgSrc: "/images/scss-icon.png" },
+    { name: "HTML", imgSrc: htmlIcon },
+    { name: "ReactJS", imgSrc: reactIcon },
+    { name: "JavaScript", imgSrc: jsIcon },
+    { name: "jQuery", imgSrc: jqueryIcon },
+    { name: "CSS", imgSrc: cssIcon },
+    { name: "SCSS", imgSrc: scssIcon },
   ];
 
-  // Массив с данными для бэкенд технологий
   const backEndStackItems = [
-    { name: "1С-Битрикс", imgSrc: "/images/1c-bitrix-icon.png" },
-    { name: "Ajax", imgSrc: "/images/ajax-icon.png" },
-    { name: "PHP", imgSrc: "/images/php-icon.png" },
-    { name: "Django", imgSrc: "/images/django-icon.png" },
-    { name: "MySQL", imgSrc: "/images/mysql-icon.png" },
-    { name: "REST API", imgSrc: "/images/rest-api-icon.png" },
+    { name: "1С-Битрикс", imgSrc: bitrixIcon },
+    { name: "Ajax", imgSrc: ajaxIcon },
+    { name: "PHP", imgSrc: phpIcon },
+    { name: "Django", imgSrc: djangoIcon },
+    { name: "MySQL", imgSrc: mysqlIcon },
+    { name: "REST API", imgSrc: restApiIcon },
   ];
 
   // Сортировка фронтенд технологий по количеству символов в name
