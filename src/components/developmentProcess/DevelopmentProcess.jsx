@@ -8,7 +8,7 @@ export default function DevelopmentProcess() {
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [imageSrc, setImageSrc] = useState("/images/Development.webp");
+  const [imageSrc, setImageSrc] = useState(imgDevDesc);
 
   const handleMouseDown = (e) => {
     e.preventDefault(); // предотвращаем выделение текста
@@ -75,11 +75,7 @@ export default function DevelopmentProcess() {
         onMouseMove={handleMouseMove}
         style={{ overflowX: "scroll", cursor: "grab", userSelect: "none" }}
       >
-        <img
-          src={imageSrc} // Используем динамическое значение для src
-          alt=""
-          className="development-process__img"
-        />
+        <img src={imageSrc} alt="" className="development-process__img" />
       </div>
     </section>
   );

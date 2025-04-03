@@ -11,18 +11,18 @@
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr max-content;
-    gap: clamp(0rem, -89.4rem + 119.2vw, 18.625rem);
+    gap: 20px;
   }
 
   &__links {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2.5rem, 2.146rem + 1.77vw, 3.75rem);
+    grid-template-columns: max-content 1fr;
+    gap: clamp(2.5rem, 2.146rem + 1.77vw, 3.75rem)
+      clamp(3.75rem, 1.998rem + 8.76vw, 9.938rem);
   }
 
   &__logo {
     width: clamp(26.25rem, 14.25rem + 16vw, 28.75rem);
-    width: 100%;
     justify-self: flex-end;
   }
 
@@ -63,7 +63,7 @@
   &__content-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(0.625rem, 0.537rem + 0.44vw, 0.938rem) 101px;
+    gap: clamp(0.625rem, 0.537rem + 0.44vw, 0.938rem);
   }
 
   &__content-wrapper:has(.footer-info__txt:nth-child(n + 4)) {
@@ -87,6 +87,10 @@
   .footer {
     &__logo {
       justify-self: flex-start;
+    }
+
+    &__wrapper {
+      gap: 0;
     }
   }
 }
