@@ -49,7 +49,7 @@ export default function Footer() {
         },
         {
           type: "image",
-          src: { tgImg },
+          src: tgImg,
           alt: "",
           href: "https://t.me/and_step",
         },
