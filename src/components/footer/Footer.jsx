@@ -3,6 +3,7 @@ import PageTitle from "../PageTitle/PageTitle";
 import FooterLinkItem from "./FooterLinkItem";
 
 import footerLogo from "/images/csp-logo-footer.svg";
+import tgImg from "/images/telegram-footer.svg";
 
 export default function Footer() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
@@ -48,7 +49,7 @@ export default function Footer() {
         },
         {
           type: "image",
-          src: "/images/telegram-footer.svg",
+          src: { tgImg },
           alt: "",
           href: "https://t.me/and_step",
         },
@@ -73,11 +74,7 @@ export default function Footer() {
                     items={item.items}
                   />
                 ))}
-                <img
-                  src="/images/csp-logo-footer.svg"
-                  alt=""
-                  className="footer__logo"
-                />
+                <img src={footerLogo} alt="" className="footer__logo" />
               </div>
             ) : (
               <>

@@ -20,11 +20,8 @@
     gap: clamp(2.5rem, 2.146rem + 1.77vw, 3.75rem);
   }
 
-  &__links-item {
-  }
-
   &__logo {
-    max-width: 425px;
+    width: clamp(26.25rem, 14.25rem + 16vw, 28.75rem);
     width: 100%;
     justify-self: flex-end;
   }
@@ -66,7 +63,7 @@
   &__content-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(0.625rem, 0.537rem + 0.44vw, 0.938rem) 60px;
+    gap: clamp(0.625rem, 0.537rem + 0.44vw, 0.938rem) 101px;
   }
 
   &__content-wrapper:has(.footer-info__txt:nth-child(n + 4)) {

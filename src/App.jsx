@@ -8,7 +8,7 @@ import OurServices from "./components/ourServices/OurServices";
 import LeaveRequest from "./components/leaveRequest/LeaveRequest";
 import AboutUs from "./components/aboutUs/AboutUs";
 import DeveloperInfo from "./components/developersInfo/developerInfo";
-import OurProjects from "./components/ourProjects/ourProjects";
+import OurProjects from "./components/ourProjects/OurProjects";
 import Footer from "./components/footer/Footer";
 import DevelopmentProcess from "./components/developmentProcess/DevelopmentProcess";
 
