@@ -34,21 +34,36 @@ export default function Form({ Theme }) {
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-    if (
-      selectedFile &&
-      (selectedFile.type.startsWith("image/") ||
-        selectedFile.type === "text/plain" ||
-        selectedFile.type === "application/msword" ||
-        selectedFile.type ===
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-    ) {
+
+    // Массив допустимых MIME-типов или проверок с регулярными выражениями
+    const allowedTypes = [
+      /^image\//, // все изображения
+      /^text\//, // любые текстовые файлы (txt, html, csv и т.п.)
+      "application/msword", // .doc
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
+      "application/vnd.oasis.opendocument.text", // .odt
+      "application/rtf", // .rtf
+    ];
+
+    // Функция проверки, соответствует ли MIME-тип одного из разрешённых значений
+    const isAllowedType = allowedTypes.some((allowedType) => {
+      if (typeof allowedType === "string") {
+        return selectedFile.type === allowedType;
+      } else if (allowedType instanceof RegExp) {
+        return allowedType.test(selectedFile.type);
+      }
+      return false;
+    });
+
+    if (selectedFile && isAllowedType) {
       setFile(selectedFile);
     } else {
       alert(
-        "Пожалуйста, выберите изображение, текстовый файл или документ Word."
+        "Пожалуйста, выберите изображение, текстовый файл или документ (например, txt, doc, docx, odt, rtf и др.)."
       );
     }
   };
+
   return (
     <form className={Theme === "dark" ? "form form-dark" : "form"}>
       <div>
@@ -115,7 +130,7 @@ export default function Form({ Theme }) {
             type="file"
             id="fileInput"
             style={{ display: "none" }}
-            accept="image/*,.txt"
+            accept="image/*, text/*, .doc, .docx, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             onChange={handleFileChange}
           />
         </div>
