@@ -28,8 +28,10 @@ export default function HeaderLinkMobile({ burgerLinks }) {
   return (
     <>
       <div
-        onClick={() => setIsBurgerOpen(!isBurgerOpen)}
-        className="header__link header__burger-btn"
+        onClick={toggleMenu}
+        className={`header__link header__burger-btn ${
+          isBurgerOpen ? "active" : ""
+        }`}
       >
         <span></span>
       </div>
