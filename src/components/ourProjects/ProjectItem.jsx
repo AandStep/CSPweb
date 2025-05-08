@@ -32,7 +32,7 @@ const ProjectItem = ({ title, subtitle, imgSrc, backgroundImg }) => {
       >
         <img src={imgSrc} alt="" className="project-item__name" />
       </div>
-      <h1 className="project-item__title">{title}</h1>
+      <h2 className="project-item__title">{title}</h2>
       <motion.h2
         className="project-item__subtitle"
         initial={{ opacity: 0, y: -20 }}

@@ -44,10 +44,10 @@ export default function AboutUs() {
       </div>
       <div className="container">
         <div className="about-us__wrapper">
-          <h1 className="about-us__title">
+          <h2 className="about-us__title">
             <span>CSP</span> – студия разработки дизайна и веб-приложений. Мы
             создаем уникальные решения для каждого клиента
-          </h1>
+          </h2>
           <div
             ref={scrollableRef}
             onMouseDown={handleMouseDown}

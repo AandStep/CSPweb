@@ -11,9 +11,9 @@ export default function LeaveRequest() {
       <div className="container">
         <div className="leave-request__wrapper">
           <div className="leave-request__offer">
-            <h1 className="leave-request__title">
+            <h2 className="leave-request__title">
               Не нашли подходящее предложение?
-            </h1>
+            </h2>
             <h3 className="leave-request__sub-title">
               оставьте заявку и наши специалисты помогут вам найти решение
             </h3>

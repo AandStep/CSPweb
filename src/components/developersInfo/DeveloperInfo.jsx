@@ -69,7 +69,7 @@ export default function DeveloperInfo() {
         <div className="developers-info__wrapper">
           {developers.map((developer, index) => (
             <div className="developer" key={index}>
-              <h1 className="developer__title">{developer.title}</h1>
+              <h2 className="developer__title">{developer.title}</h2>
               <div className="developer__info-block skills">
                 <div className="developer__subtitle">Навыки</div>
                 <p className="skills__txt">{developer.skills}</p>
