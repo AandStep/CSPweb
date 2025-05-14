@@ -58,7 +58,7 @@ export default function Footer() {
   ];
 
   return (
-    <section className="footer section-footer">
+    <section id="contacts" className="footer section-footer">
       <div className="container">
         <PageTitle titleTxt="контакты" titleTheme="light" />
       </div>

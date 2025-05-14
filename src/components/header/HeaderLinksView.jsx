@@ -16,7 +16,7 @@ export default function HeaderLinks() {
     ["Разработка", "#development-process"],
     ["Разработчики", "#developers-info"],
     ["Наши проекты", "#our-projects"],
-    ["Контакты", "#leave-request"],
+    ["Контакты", "#contacts"],
   ];
 
   // Переменная для смены отображения на мобильное
