@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
+import { API_BASE_URL } from "../../../apiConfig";
 
 export default function AboutUs() {
   const [advantages, setAdvantages] = useState([]);
@@ -9,7 +10,7 @@ export default function AboutUs() {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    fetch("/api/main_pageabout_us/")
+    fetch(`${API_BASE_URL}api/main_pageabout_us/`)
       .then((res) => {
         console.log("Статус ответа:", res.status);
         return res.json();
