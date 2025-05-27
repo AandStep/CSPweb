@@ -7,6 +7,15 @@ export default defineConfig({
   base: "/CSPweb/",
   server: {
     host: "0.0.0.0",
-    port: 3000,
+    port: 8000,
+    proxy: {
+      // всё, что идёт на /api, будет редиректиться:
+      "/api": {
+        target: "http://87.228.96.2",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, "/api"),
+      },
+    },
   },
 });

@@ -1,19 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
 
 export default function AboutUs() {
-  // обязательно для длинных предложений ставить "/n" максимальное количество слов - 3, за неким исключением
-  const AdvantageItems = [
-    ["24/7", "Поддержка", "оперативное решение ваших /n задач в любое время"],
-    ["3", "Года опыта ", "в сфере /n веб-разработки"],
-    ["100%", "Индивидуальный подход", "к каждому проекту /n и клиенту"],
-    ["6", "Лучших", "разработчиков /n в нашей команде"],
-  ];
-
+  const [advantages, setAdvantages] = useState([]);
   const scrollableRef = useRef(null);
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  useEffect(() => {
+    fetch("/api/main_pageabout_us/")
+      .then((res) => {
+        console.log("Статус ответа:", res.status);
+        return res.json();
+      })
+      .then((data) => {
+        console.log("Данные about_us:", data);
+        setAdvantages(data);
+      })
+      .catch((err) => console.error("Ошибка при загрузке about_us:", err));
+  }, []);
 
   const handleMouseDown = (e) => {
     setIsDown(true);
@@ -21,19 +27,13 @@ export default function AboutUs() {
     setScrollLeft(scrollableRef.current.scrollLeft);
   };
 
-  const handleMouseLeave = () => {
-    setIsDown(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDown(false);
-  };
-
+  const handleMouseLeave = () => setIsDown(false);
+  const handleMouseUp = () => setIsDown(false);
   const handleMouseMove = (e) => {
-    if (!isDown) return; // Если не нажато, выходим
+    if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - scrollableRef.current.offsetLeft;
-    const walk = x - startX; // Скорость прокрутки
+    const walk = x - startX;
     scrollableRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -56,19 +56,20 @@ export default function AboutUs() {
             onMouseMove={handleMouseMove}
             className="about-us__advantages advantages"
           >
-            {AdvantageItems.map((advantage, index) => {
-              const [number, title, description] = advantage;
-              const desc = description.split("/n");
+            {advantages.map((adv) => {
+              const { id, main_text, text, sub_text } = adv;
+              // разбиваем по "/n" так же, как раньше
+              const [line1, line2] = sub_text.split("/n");
 
               return (
-                <div className="advantages__item" key={index}>
-                  <p className="advantages__number">{number}</p>
+                <div className="advantages__item" key={id}>
+                  <p className="advantages__number">{main_text}</p>
                   <div className="advantages__description">
-                    <p className="advantages__title">{title}</p>
+                    <p className="advantages__title">{text}</p>
                     <p className="advantages__sub-title">
-                      {desc[0]}
+                      {line1}
                       <br />
-                      {desc[1]}
+                      {line2}
                     </p>
                   </div>
                 </div>

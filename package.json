@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://andstep228.github.io/CSPweb/",
+  "proxy": "http://87.228.96.2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,6 +23,7 @@
     "react-hook-form": "^7.53.2",
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^6.27.0",
+    "react-toastify": "^11.0.5",
     "sass": "^1.80.5",
     "scss": "^0.2.4",
     "yup": "^1.4.0"
@@ -37,6 +39,6 @@
     "eslint-plugin-react-refresh": "^0.4.13",
     "gh-pages": "^6.3.0",
     "globals": "^15.11.0",
-    "vite": "^6.2.0"
+    "vite": "^6.3.5"
   }
 }

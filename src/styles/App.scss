@@ -36,6 +36,11 @@ section {
   margin: 0 auto;
 }
 
+.Toastify {
+  min-height: auto;
+  padding: 0;
+}
+
 @layer rest, buttons;
 
 @layer buttons {

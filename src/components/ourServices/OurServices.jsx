@@ -1,24 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
 
 export default function OurServices() {
-  const servicesList = [
-    [
-      "landing page",
-      "Лэндинг – одностраничный сайт, идеально подойдет для портфолио, промо-страницы вашей компании или рекламы продукта",
-      "10.000р.",
-    ],
-    [
-      "online shop",
-      "Интернет-магазин – сайт с системой оплаты для вашего бизнеса. Удобный каталог, корзина товаров и промо страницы товаров выведут ваши продажи на новый уровень!",
-      "120.000р.",
-    ],
-    [
-      "ui/ux design",
-      "UI/UX дизайн – логотипы, брендинг, баннеры, рекламы для соц-сетей. Все что нужно для эффективного продвижения вашего личного бренда ",
-      "5.000р.",
-    ],
-  ];
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/main_pageproduct/")
+      .then((res) => {
+        if (!res.ok) throw new Error(`Ошибка ${res.status}`);
+        return res.json();
+      })
+      .then((data) => setServices(data))
+      .catch((err) => console.error("Не удалось загрузить services:", err));
+  }, []);
+
+  // Форматирует 5000.0 → "5.000р."
+  const formatPrice = (price) => {
+    const intPart = Math.round(price); // убираем дробную часть
+    return intPart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "р.";
+  };
+
   return (
     <section id="our-services" className="our-services section-white">
       <div className="container">
@@ -26,9 +27,12 @@ export default function OurServices() {
       </div>
       <div className="container">
         <div className="our-services__wrapper">
-          {servicesList.map(
-            ([serviceName, serviceDescription, servicePrice], index) => (
+          {services.map(({ id, name, about, price }, index) => {
+            const [titlePart, descPart] = about.split(" – ");
+            return (
               <div
+                key={id}
+                className="our-services__item"
                 style={{
                   backgroundImage: `url(${
                     import.meta.env.BASE_URL
@@ -37,18 +41,14 @@ export default function OurServices() {
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
-                key={index}
-                className="our-services__item"
               >
-                <h2 className="our-services__name">{serviceName}</h2>
+                <h2 className="our-services__name">{name}</h2>
                 <p className="our-services__description">
-                  <strong>{serviceDescription.split(" – ")[0]}</strong> –{" "}
-                  {serviceDescription.split(" – ")[1]}
+                  <strong>{titlePart}</strong> – {descPart}
                 </p>
                 <p className="our-services__price">
-                  цена от: <span>{servicePrice}</span>
+                  цена от: <span>{formatPrice(price)}</span>
                 </p>
-
                 <a
                   href="#leave-request"
                   className="our-services__button button-alt"
@@ -56,8 +56,8 @@ export default function OurServices() {
                   <p>заказать</p>
                 </a>
               </div>
-            )
-          )}
+            );
+          })}
         </div>
       </div>
     </section>

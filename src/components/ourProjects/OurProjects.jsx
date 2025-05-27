@@ -1,47 +1,13 @@
 import React, { useEffect, useState } from "react";
 import debounce from "lodash/debounce";
+import { API_BASE_URL } from "/apiConfig";
 
 import PageTitle from "../PageTitle/PageTitle";
 import ProjectItem from "./ProjectItem";
 import Masonry from "react-masonry-css";
 
-import stekloideaDesc from "/images/stekloidea-desc.svg";
-import stekloideaBkg from "/images/stekloidea-bkg.png";
-import kozhuraDesc from "/images/kozhura-desc.svg";
-import kozhuraBkg from "/images/kozhura-bkg.png";
-
 export default function OurProjects() {
-  const projects = [
-    {
-      title: "Брэндинг компании STEKLO&IDEA",
-      subtitle:
-        "Сайт по продаже зеркал, слоганы, логотипы, фирменные цвета и стиль, презентации, баннеры, оформление соц-сетей",
-      imgSrc: stekloideaDesc,
-      backgroundImg: stekloideaBkg,
-    },
-    {
-      title: "Сайт-портал для компании KOZHURA",
-      subtitle:
-        "Многостраничный сайт, переработка устаревшего дизайна, UI-кит компании, отрисовка логотипов",
-      imgSrc: kozhuraDesc,
-      backgroundImg: kozhuraBkg,
-    },
-    {
-      title: "Брэндинг компании STEKLO&IDEA",
-      subtitle:
-        "Сайт по продаже зеркал, слоганы, логотипы, фирменные цвета и стиль, презентации, баннеры, оформление соц-сетей",
-      imgSrc: stekloideaDesc,
-      backgroundImg: stekloideaBkg,
-    },
-    {
-      title: "Сайт-портал для компании KOZHURA",
-      subtitle:
-        "Многостраничный сайт, переработка устаревшего дизайна, UI-кит компании, отрисовка логотипов",
-      imgSrc: kozhuraDesc,
-      backgroundImg: kozhuraBkg,
-    },
-  ];
-
+  const [projects, setProjects] = useState([]);
   const [breakpointCols, setBreakpointCols] = useState({
     default: 2,
     960: 1,
@@ -54,13 +20,23 @@ export default function OurProjects() {
     } else {
       setBreakpointCols({ default: 2 });
     }
-  }); // Установите задержку по необходимости
+  });
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/main_pageour_project_list/")
+      .then((res) => {
+        console.log("Статус ответа:", res.status);
+        return res.json();
+      })
+      .then((data) => setProjects(data))
+      .catch((err) => console.error("Ошибка:", err));
   }, []);
 
   return (
@@ -75,13 +51,12 @@ export default function OurProjects() {
             className="our-projects__masonry-grid"
             columnClassName="our-projects__masonry-grid_column"
           >
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <ProjectItem
-                key={index}
-                title={project.title}
-                subtitle={project.subtitle}
-                imgSrc={project.imgSrc}
-                backgroundImg={project.backgroundImg}
+                key={project.id}
+                title={project.main_text}
+                subtitle={project.about}
+                backgroundImg={project.image}
               />
             ))}
           </Masonry>

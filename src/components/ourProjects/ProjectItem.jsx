@@ -29,9 +29,7 @@ const ProjectItem = ({ title, subtitle, imgSrc, backgroundImg }) => {
           backgroundSize: "100%",
         }}
         className="project-item__img"
-      >
-        <img src={imgSrc} alt="" className="project-item__name" />
-      </div>
+      ></div>
       <h2 className="project-item__title">{title}</h2>
       <motion.h2
         className="project-item__subtitle"
