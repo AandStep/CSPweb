@@ -30,7 +30,7 @@ export default function OurProjects() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/main_pageour_project_list/")
+    fetch(`${API_BASE_URL}/api/main_pageour_project_list/`)
       .then((res) => {
         console.log("Статус ответа:", res.status);
         return res.json();

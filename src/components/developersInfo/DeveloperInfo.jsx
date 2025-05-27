@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import PageTitle from "../PageTitle/PageTitle";
+import { API_BASE_URL } from "../../../apiConfig";
 
 export default function DeveloperInfo() {
   const [developers, setDevelopers] = useState([]);
@@ -10,8 +11,8 @@ export default function DeveloperInfo() {
     async function fetchData() {
       try {
         const [devRes, stackRes] = await Promise.all([
-          fetch("/api/main_pagedeveloper_list/"),
-          fetch("/api/main_pagestack_list/"),
+          fetch(`${API_BASE_URL}/api/main_pagedeveloper_list/`),
+          fetch(`${API_BASE_URL}/api/main_pagestack_list/`),
         ]);
 
         if (!devRes.ok || !stackRes.ok) {

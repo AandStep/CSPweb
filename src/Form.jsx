@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_BASE_URL } from "../apiConfig";
 
 const schema = yup.object().shape({
   name: yup.string().required("Ваше имя обязательно"),
@@ -109,7 +110,7 @@ export default function Form({ Theme }) {
     files.forEach((file) => formData.append("terms_of_reference", file));
 
     try {
-      const res = await fetch("/api/main_pageorder/", {
+      const res = await fetch(`${API_BASE_URL}/api/main_pageorder/`, {
         method: "POST",
         body: formData,
       });

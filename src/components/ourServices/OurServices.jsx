@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import PageTitle from "../PageTitle/PageTitle";
+import { API_BASE_URL } from "../../../apiConfig";
 
 export default function OurServices() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("/api/main_pageproduct/")
+    fetch(`${API_BASE_URL}/api/main_pageproduct/`)
       .then((res) => {
         if (!res.ok) throw new Error(`Ошибка ${res.status}`);
         return res.json();
