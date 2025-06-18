@@ -11,8 +11,8 @@ export default function DeveloperInfo() {
     async function fetchData() {
       try {
         const [devRes, stackRes] = await Promise.all([
-          fetch(`${API_BASE_URL}/api/main_pagedeveloper_list/`),
-          fetch(`${API_BASE_URL}/api/main_pagestack_list/`),
+          fetch(`${API_BASE_URL}/api/main_page/developer_list/`),
+          fetch(`${API_BASE_URL}/api/main_page/stack_list/`),
         ]);
 
         if (!devRes.ok || !stackRes.ok) {

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://andstep228.github.io/CSPweb/",
-  "proxy": "http://87.228.96.2",
+  "proxy": "http://cspweb.ru",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

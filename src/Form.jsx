@@ -110,7 +110,7 @@ export default function Form({ Theme }) {
     files.forEach((file) => formData.append("terms_of_reference", file));
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/main_pageorder/`, {
+      const res = await fetch(`${API_BASE_URL}/api/main_page/order/`, {
         method: "POST",
         body: formData,
       });

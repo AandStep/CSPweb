@@ -6,7 +6,7 @@ export default function OurServices() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/main_pageproduct/`)
+    fetch(`${API_BASE_URL}/api/main_page/product/`)
       .then((res) => {
         if (!res.ok) throw new Error(`Ошибка ${res.status}`);
         return res.json();

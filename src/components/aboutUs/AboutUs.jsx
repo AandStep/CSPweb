@@ -10,13 +10,11 @@ export default function AboutUs() {
   const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}api/main_pageabout_us/`)
+    fetch(`${API_BASE_URL}/api/main_page/about_us/`)
       .then((res) => {
-        console.log("Статус ответа:", res.status);
         return res.json();
       })
       .then((data) => {
-        console.log("Данные about_us:", data);
         setAdvantages(data);
       })
       .catch((err) => console.error("Ошибка при загрузке about_us:", err));
