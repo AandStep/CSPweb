@@ -11,7 +11,7 @@ export default defineConfig({
     proxy: {
       // всё, что идёт на /api, будет редиректиться:
       "/api": {
-        target: "http://cspweb.ru",
+        target: "https://cspweb.ru",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, "/api"),
